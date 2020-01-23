@@ -5,12 +5,16 @@ const config = require('config');
 const app = express();
 
 //Body-Partes Middleware
-
 app.use(express.json());
 
 //DB config
 
-const db = config.get('mongoURI');
+
+const databaseUser =  config.get('databaseUser');
+const databasePassword = config.get('databasePassword');
+const databaseName = config.get("databaseName");
+const db = config.get('mongoURI').replace("<database>",databaseName).replace("<username>", databaseUser).replace("<password>", databasePassword);
+
 
 //Connect to Mongo
 mongoose

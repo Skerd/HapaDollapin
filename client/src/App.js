@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import AppNavbar from './components/AppNavbar';
+import OnTopBar from './components/OnTopBar'
 import ShoppingList from './components/ShoppingList';
 import {Container} from 'reactstrap';
+
+import Dashboard from './components/chat/Dashboard'
 
 import ClinicModal from './components/ClinicModel';
 
@@ -15,20 +18,23 @@ import { loadUser } from './actions/authActions';
 
 class App extends Component {
 
-
   componentDidMount(){
-    store.dispatch(loadUser());
+    //store.dispatch(loadUser());
   }
 
   render(){
+
     return (
 
       <Provider store={store}  >
         <div className="App">
-          <AppNavbar />
+          <OnTopBar></OnTopBar>
+          {/* <AppNavbar /> */}
           <Container>
-            <ClinicModal/>
-            <ShoppingList />
+            {/* <ClinicModal/> */}
+            {/* <ShoppingList /> */}
+
+            <Dashboard> </Dashboard>
           </Container>
 
         </div>

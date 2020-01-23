@@ -18,10 +18,6 @@ const UserSchema = new Schema({
         type: Number,
         default: 1
     },
-    userName:{
-        type: String,
-        required: true
-    },
     password:{
         type: String,
         required: true
@@ -39,7 +35,6 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     }
-    
 });
 
 module.exports = User = mongoose.model('User', UserSchema);

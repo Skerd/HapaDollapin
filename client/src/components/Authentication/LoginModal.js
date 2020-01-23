@@ -14,7 +14,7 @@ import {
 
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import { login } from '../../actions/authActions';
+import {login } from '../../actions/authActions';
 import {clearErrors} from '../../actions/errorActions';
 
 
@@ -88,7 +88,7 @@ class LoginModal extends Component{
         return(
             <div>
                 <NavLink onClick={this.toggle} href="#">
-                    Login
+                    Hyni ne llogari
                 </NavLink>
 
                 <Modal 
@@ -98,7 +98,7 @@ class LoginModal extends Component{
                 <ModalHeader
                     toggle={this.toggle}
                 >
-                    Login
+                    Hyni me llogari
                 </ModalHeader>
 
                 <ModalBody>
@@ -114,7 +114,7 @@ class LoginModal extends Component{
                                 type="email"
                                 name="email"
                                 id="email"
-                                placeholder="Email"
+                                placeholder="E-mail"
                                 className="mb-3"
                                 onChange={ this.onChange}
                             ></Input>
@@ -123,7 +123,7 @@ class LoginModal extends Component{
                                 type="password"
                                 name="password"
                                 id="password"
-                                placeholder="Password"
+                                placeholder="Fjalëkalimi"
                                 className="mb-3"
                                 onChange={ this.onChange}
                             ></Input>
@@ -134,7 +134,7 @@ class LoginModal extends Component{
                                 style={{marginTop: '2rem'}}
                                 block
                             >
-                                Login
+                                Konfirmo
                             </Button>
 
                         </FormGroup>

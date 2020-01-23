@@ -14,11 +14,11 @@ const jwt = require('jsonwebtoken');
 
 router.post('/', (req, res) =>{
     
-    const {name, surname, userName, password, email } = req.body;
+    const {name, surname, password, email } = req.body;
 
     //Simple validation
 
-    if( !name || !surname || !userName || !password || !email ){
+    if( !name || !surname || !password || !email ){
         return res.status(400).json({ msg: 'Please enter all fields!'});
     }
 
@@ -30,7 +30,7 @@ router.post('/', (req, res) =>{
         } 
         else{
             const newUser = new User({
-                name, surname, userName, password, email 
+                name, surname, password, email 
             });
 
             //Create salt & hash
@@ -58,7 +58,6 @@ router.post('/', (req, res) =>{
                                         id: userr.id,
                                         name: userr.name,
                                         surname: userr.surname,
-                                        userName: userr.userName,
                                         password: userr.password,
                                         email: userr.email
                                     }

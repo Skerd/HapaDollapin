@@ -24,11 +24,10 @@ class RegisterModal extends Component{
         modal: false,
         name: '',
         surname: '',
-        userName: '',
         password: '',
+        confirmPassword: '',
         email: '',
         msg: null
-
     };
 
     static propTypes ={
@@ -78,19 +77,21 @@ class RegisterModal extends Component{
        
         //register
 
-        const {name, surname, userName, password, email} = this.state;
+        const {name, surname, userName, password, confirmPassword, email} = this.state;
 
         //Create user object
 
-        const newUser = {
-            name, surname, userName, password, email
-        };
-
-        //Attempt to register
-        this.props.register(newUser);
-
-        //this.toggle();
-
+        if( confirmPassword !== password  ){
+            this.setState({ msg: "Fjalëkalimet nuk perputhen" });
+        }
+        else{
+            const newUser = {
+                name, surname, userName, password, email
+            };
+            //Attempt to register
+            this.props.register(newUser);
+        }
+        
     }
 
 
@@ -98,7 +99,7 @@ class RegisterModal extends Component{
         return(
             <div>
                 <NavLink onClick={this.toggle} href="#">
-                    Register
+                    Regjistrohu
                 </NavLink>
 
                 <Modal 
@@ -108,7 +109,7 @@ class RegisterModal extends Component{
                 <ModalHeader
                     toggle={this.toggle}
                 >
-                    Register as a new User
+                    Regjistrohu si perdorues i ri
                 </ModalHeader>
 
                 <ModalBody>
@@ -124,7 +125,7 @@ class RegisterModal extends Component{
                                 type="text"
                                 name="name"
                                 id="name"
-                                placeholder="Name"
+                                placeholder="Emri"
                                 className="mb-3"
                                 onChange={ this.onChange}
                             ></Input>
@@ -133,16 +134,7 @@ class RegisterModal extends Component{
                                 type="text"
                                 name="surname"
                                 id="surname"
-                                placeholder="Surname"
-                                className="mb-3"
-                                onChange={ this.onChange}
-                            ></Input>
-
-                            <Input
-                                type="text"
-                                name="userName"
-                                id="userName"
-                                placeholder="Username"
+                                placeholder="Mbiemri"
                                 className="mb-3"
                                 onChange={ this.onChange}
                             ></Input>
@@ -152,30 +144,28 @@ class RegisterModal extends Component{
                                 type="password"
                                 name="password"
                                 id="password"
-                                placeholder="Password"
+                                placeholder="Fjalëkalimi"
                                 className="mb-3"
                                 onChange={ this.onChange}
                             ></Input>
 
                             <Input
-                                type="pasword"
-                                name="passwordConfirm"
+                                type="password"
+                                name="confirmPassword"
                                 id="passwordConfirm"
-                                placeholder="Confirm Password"
+                                placeholder="Konfirmo Fjalëkalimin"
                                 className="mb-3"
                                 onChange={ this.onChange}
                             ></Input>
-
 
                             <Input
                                 type="email"
                                 name="email"
                                 id="email"
-                                placeholder="Email"
+                                placeholder="E-mail"
                                 className="mb-3"
                                 onChange={ this.onChange}
                             ></Input>
-
                            
                             <Button
                                 color="dark"

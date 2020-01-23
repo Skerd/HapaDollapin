@@ -14,7 +14,7 @@ import{
 
 }
 from '../actions/types';
-import { bindActionCreators } from 'redux';
+//import { bindActionCreators } from 'redux';
 
 
 //Check token and load user
@@ -22,8 +22,6 @@ import { bindActionCreators } from 'redux';
 export const loadUser = () => (dispatch, getState) => { //asynchron
     //user Loading
     dispatch({type: USER_LOADING});
-
-    
 
     axios.get('/api/auth/user', tokenConfig( getState ) )
     .then( res => dispatch({
