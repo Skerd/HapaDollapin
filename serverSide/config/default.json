@@ -1,0 +1,4 @@
+{
+    "mongoURI" : "mongodb+srv://Qikabodi:eWQoEls0ysQvBcCN@unistudteamcluster-mezhk.mongodb.net/PrimaryDb?retryWrites=true&w=majority",
+    "jwtSecret" : "c'UP2]Ec:^6`jYa#"
+}

@@ -1,7 +1,0 @@
-{
-    "mongoURI": "mongodb://<username>:<password>@cluster0-shard-00-00-z2w6v.mongodb.net:27017,cluster0-shard-00-01-z2w6v.mongodb.net:27017,cluster0-shard-00-02-z2w6v.mongodb.net:27017/<database>?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",
-    "jwtSecret": "jwtSecretCode",
-    "databaseName" : "HapaDollapin",
-    "databaseUser" : "SkerdAdmin",
-    "databasePassword" : "e6o5OqbxCgYqrC2W"
-}
